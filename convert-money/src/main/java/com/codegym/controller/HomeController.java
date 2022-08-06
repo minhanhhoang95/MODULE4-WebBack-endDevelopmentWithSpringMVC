@@ -10,7 +10,7 @@ public class HomeController {
     @GetMapping("/home")
     public ModelAndView showHome() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("WEB-INF/views/home.jsp");
+        modelAndView.setViewName("home");
 
         return modelAndView;
     }
@@ -18,7 +18,7 @@ public class HomeController {
     @GetMapping("/info")
     public ModelAndView showInfo(@RequestParam String convert) {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("WEB-INF/views/info.jsp");
+        modelAndView.setViewName("info");
         modelAndView.addObject("convert", convert);
         int result = Integer.parseInt(convert) * 24000 ;
         modelAndView.addObject("result",result);
