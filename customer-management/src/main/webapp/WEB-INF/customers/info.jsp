@@ -3,44 +3,45 @@
 <%@ page import="cg.wbd.grandemonstration.model.Customer" %>
 <%@ page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%!
-    private CustomerService customerService = CustomerServiceFactory.getInstance();
-%>
-<%
-    List<Customer> customers = (List<Customer>) request.getAttribute("customers");
-%>
-<%
-    Long id = Long.valueOf(request.getParameter("id"));
-    Customer customer = customerService.findOne(id);
-%>
+<%--<%!--%>
+<%--    private CustomerService customerService = CustomerServiceFactory.getInstance();--%>
+<%--%>--%>
+<%--<%--%>
+<%--    List<Customer> customers = (List<Customer>) request.getAttribute("customers");--%>
+<%--%>--%>
+<%--<%--%>
+<%--    Long id = Long.valueOf(request.getParameter("id"));--%>
+<%--    Customer customer = customerService.findOne(id);--%>
+<%--%>--%>
 <%--There are <%= customers.size() %> customer(s) in list.--%>
+
 <form action="/customers" method="post">
 <fieldset>
     <legend>Customer Information</legend>
-    <input type="hidden" name="id" value="<%= customer.getId() %>">
+    <input type="hidden" name="id" value="${customer.getId()}">
     <table>
         <tr>
             <td>Id</td>
             <td>
-                <%= customer.getId() %>
+                ${customer.getId()}
             </td>
         </tr>
         <tr>
             <td>Name</td>
             <td>
-                <input type="text" name="name" value="<%= customer.getName() %>">
+                <input type="text" name="name" value="${customer.getName()}">
             </td>
         </tr>
         <tr>
             <td>Email</td>
             <td>
-                <input type="text" name="email" value="<%= customer.getEmail() %>">
+                <input type="text" name="email" value="${customer.getEmail()}">
             </td>
         </tr>
         <tr>
             <td>Address</td>
             <td>
-                <input type="text" name="address" value="<%= customer.getAddress() %>">
+                <input type="text" name="address" value="${customer.getAddress()}">
             </td>
         </tr>
         <tr>

@@ -61,7 +61,8 @@ There are <%= customers.size() %> customer(s) in list.
             <c:out value="${c.id}"/>
         </td>
         <td>
-            <a href="/customers/info.jsp?id=${c.id}">${c.name}</a>
+<%--            <a href="/WEB-INF/customers/info.jsp?id=${c.id}">${c.name}</a>--%>
+            <a href="/customers/${c.id}">${c.name}</a>
         </td>
         <td>
             <c:out value="${c.email}"/>
