@@ -47,15 +47,15 @@ public class CustomerController {
 
         return modelAndView;
     }
-    @PostMapping("/{id}")
-    public String doCreate(@PathVariable Long id, @ModelAttribute Customer customer){
+    @PostMapping("/update")
+    public String doCreate( @ModelAttribute Customer customer){
 
         hibernateCustomerService.save(customer);
 
        return "redirect:/customers";
     }
 
-    @PostMapping("/update")
+    @PostMapping("/create")
     public String doUpdate(@ModelAttribute Customer customer){
 
         hibernateCustomerService.save(customer);
