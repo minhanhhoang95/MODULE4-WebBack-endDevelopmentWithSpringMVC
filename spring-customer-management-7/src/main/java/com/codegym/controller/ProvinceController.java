@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Optional;
+
 @Controller
 public class ProvinceController {
     @Autowired
@@ -90,9 +91,9 @@ public class ProvinceController {
     }
 
     @GetMapping("/view-province/{id}")
-    public ModelAndView viewProvince(@PathVariable("id") Long id){
+    public ModelAndView viewProvince(@PathVariable("id") Long id) {
         Optional<Province> provinceOptional = provinceService.findById(id);
-        if(!provinceOptional.isPresent()){
+        if (!provinceOptional.isPresent()) {
             return new ModelAndView("/error.404");
         }
 
